@@ -17,5 +17,7 @@ declare module 'vue' {
     PasswordField: typeof import('./components/PasswordField.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SginComponent: typeof import('./components/SginComponent.vue')['default']
+    SignComponent: typeof import('./components/SignComponents/SignComponent.vue')['default']
   }
 }
