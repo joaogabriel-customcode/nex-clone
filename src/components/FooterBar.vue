@@ -1,11 +1,11 @@
 <template>
   <v-footer class="text-center d-flex flex-column bg-surface">
-    <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5">
+    <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row">
       <v-col>
         <img src="../assets/logo.png" class="icon-image" alt="" width="64" height="64" />
       </v-col>
 
-      <v-col>
+      <v-col class="mb-3 mb-md-0">
         <div class="f-16 my-3">
           Nex Event &copy; {{ new Date().getFullYear() }}
         </div>
