@@ -14,6 +14,7 @@ declare module 'vue' {
     CreatedFacilityContainer: typeof import('./components/CreatedFacilityContainer.vue')['default']
     FooterBar: typeof import('./components/FooterBar.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    PasswordField: typeof import('./components/PasswordField.vue')['default']
     NavBar: typeof import('./components/NavBar.vue')['default']
     OrganizationEvent: typeof import('./components/OrganizationEvent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
