@@ -1,9 +1,8 @@
 <template>
-    <div>
-      <NavBar />
-
-      <FooterBar/>
-    </div>
+  <div>
+    <NavBar />
+    <FooterBar/>
+  </div>
 </template>
 
 <script lang="ts" setup>

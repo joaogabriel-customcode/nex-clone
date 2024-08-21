@@ -1,12 +1,15 @@
 <template>
-  <v-responsive class="border rounded">
+  <v-responsive class="border rounded"> 
     <v-app class="app-container">
       <v-app-bar class="px-5">
-        <img src="../assets/logo.png" width="48" height="48" class="logo" />
-        <div class="d-flex align-center mx-10 justify-center" style="font-size: 16px;">
-          <router-link class="mx-5" to="/">Eventos</router-link>
+        <router-link to="/"><img src="../assets/logo.png" width="48" height="48" class="logo" /></router-link>
+        <div
+          class="d-flex align-center mx-10 justify-center"
+          style="font-size: 16px"
+        >
+          <router-link class="mx-5" to="/event-sale">Eventos</router-link>
 
-          <v-menu>
+          <v-menu scroll-strategy="close">
             <template v-slot:activator="{ props }">
               <v-btn
                 append-icon="mdi-chevron-down"
@@ -28,10 +31,16 @@
             </v-list>
           </v-menu>
 
-          <router-link class="mx-5" style="color: #F2AF29;" to="/">Produzir eventos</router-link>
+          <router-link class="mx-5" style="color: #f2af29" to="/events/Intro"
+            >Produzir eventos</router-link
+          >
         </div>
         <v-spacer></v-spacer>
-        <v-btn style="background-color: #38BE92; color: #000; font-weight: bold;"> Cadastre-se </v-btn>
+        <v-btn
+          style="background-color: #38be92; color: #000; font-weight: bold"
+        >
+          Cadastre-se
+        </v-btn>
 
         <v-btn class="mx-4 custom-outlined" variant="outlined"> Entrar </v-btn>
       </v-app-bar>
@@ -40,18 +49,23 @@
 </template>
 
 <script setup>
+import { onMounted, ref, onBeforeUnmount } from "vue";
+
+const menu = ref(false);
+
 const items = [
   { title: "Click Me" },
   { title: "Click Me" },
   { title: "Click Me" },
   { title: "Click Me 2" },
 ];
+
 </script>
 
 <style scoped>
 .app-container {
   min-width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   max-height: 63px;
 }
 
@@ -65,7 +79,7 @@ a:hover {
 }
 
 .custom-outlined {
-  border-color: #38BE92;
-  color: #38BE92; /* Cor desejada para a borda */
+  border-color: #38be92;
+  color: #38be92; /* Cor desejada para a borda */
 }
 </style>
