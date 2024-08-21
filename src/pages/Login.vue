@@ -5,23 +5,38 @@ import { useForm } from 'vee-validate';
 import z from 'zod'
 
 const schema = z.object({
-    email : z.string().email(),
-    password : z.string().min(10, 'required'),
-    repeat :  z.string().min(10, 'required'),
-    confirm : z.boolean().default(false).refine((check)=> check === true, {message : "Aceite os termos"})
+    email: z.string().email(),
+    password: z.string()
+        .min(10, { message: "Minimo de 10 letras" })
+        .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula " })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial" })
+        .regex(/\d/, "A senha deve conter pelo menos um dígito"),
+    repeat: z.string()
+        .min(10, { message: "Minimo de 10 letras" })
+        .regex(/[A-Z]/, { message: "Deve ter no minimo uma letra maiúscula " })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: "A senha deve conter pelo menos um caractere especial" })
+        .regex(/\d/, "A senha deve conter pelo menos um dígito"),
+    confirm: z.boolean().default(false).refine((check) => check === true, { message: "Aceite os termos" })
 })
 
-const { values, defineField, errors } = useForm({
-    validationSchema : toTypedSchema(schema) 
+const { values, defineField, errors, handleSubmit, handleReset, setErrors } = useForm({
+    validationSchema: toTypedSchema(schema)
 })
 const [email, emailAttrs] = defineField('email')
 const [password, passwordAttrs] = defineField('password')
 const [repeat, repeatAttrs] = defineField('repeat')
-const [confirm, confirmAttrs , ] = defineField('confirm')
+const [confirm, confirmAttrs] = defineField('confirm')
 
-function call(e : Event) { 
-     console.log(e)
-}
+
+const submit = handleSubmit(values => {
+    if (values.password !== values.repeat) {
+        console.log("caiu aqui")
+        setErrors({
+            repeat: "As senhas não coincidem"
+        })
+        return
+    }
+})
 
 
 </script>
@@ -34,7 +49,7 @@ function call(e : Event) {
                 <div class="d-flex flex-column justify-center align-center w-50 h-100 position-absolute right-0">
                     <header class="w-50 mb-16 d-flex ga-2">
                         <v-sheet width="40" height="22" color="#38BE92" class="rounded mt-3" />
-                        
+
 
                         <div>
                             <h2 class="font-weight-medium text-h4 text-start w-100">Cadastre-se</h2>
@@ -42,18 +57,23 @@ function call(e : Event) {
                                 acessar.</small>
                         </div>
                     </header>
-                    <pre>{{ errors }}</pre>
-                    <pre>{{ values }}</pre>
                     <div class="mb-8"></div>
                     <form @submit.prevent="submit" class="d-flex flex-column align-center w-100 ga-2">
-                        <v-text-field error-messages="" v-model="email" class="w-50 rounded" label="Email"></v-text-field>
-                        <password-field v-model="password" label="Senha" />
-                        <password-field v-model="repeat" label="Confirmar senha" />
-                        <v-checkbox  class="w-50" label="Ao confirmar o cadastro, você consente conforme a LGPD (Lei
-                        13.709/2018) para o tratamento seguro de seus dados." v-model="confirm"
-                            ></v-checkbox>
-                        <v-btn type="submit" round color="primary" class="w-50 py-7 d-flex align-center " dark>criar conta</v-btn>
-                        <p class="mt-2 text-subtitle-1">Já possui conta? <RouterLink to="/" class="text-primary no-underline">
+                        <v-text-field v-model="email" class="w-50 rounded" :error-messages="errors.email" :error="false"
+                            label="Email"></v-text-field>
+                        <password-field v-model="password" label="Senha" :error-field="errors.password" />
+                        <password-field v-model="repeat" label="Confirmar senha" :error-field="errors.repeat" />
+                        <v-checkbox class="w-50 text-subtitle-2" v-model="confirm" :error-messages="errors.confirm">
+                            <template v-slot:label>
+                                <p class="text-caption">Ao confirmar o cadastro, você consente conforme a LGPD (Lei
+                                    13.709/2018) para o tratamento seguro de seus dados.</p>
+
+                            </template>
+                        </v-checkbox>
+                        <v-btn type="submit" round color="primary" class="w-50 py-7 d-flex align-center " dark>criar
+                            conta</v-btn>
+                        <p class="mt-2 text-subtitle-1">Já possui conta? <RouterLink to="/"
+                                class="text-primary no-underline">
                                 Login</RouterLink>
                         </p>
                     </form>
