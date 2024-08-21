@@ -1,28 +1,37 @@
 <template>
-  <v-responsive class="border rounded"> 
+  <v-responsive class="rounded">
     <v-app class="app-container">
-      <v-app-bar class="px-5">
-        <router-link to="/"><img src="../assets/logo.png" width="48" height="48" class="logo" /></router-link>
+      <v-app-bar class="px-5 py-3 bg-background elevation-6">
+        <router-link to="/"
+          ><img src="../assets/logo.png" width="40" height="40" class="logo"
+        /></router-link>
         <div
-          class="d-flex align-center mx-10 justify-center"
-          style="font-size: 16px"
+          class="d-flex align-center mx-5 justify-center text-uppercase"
+          style="font-size: 14px; font-weight: 500;"
         >
-          <router-link class="mx-5" to="/event-sale">Eventos</router-link>
+          <router-link to="/event-sale">
+            <v-btn
+              class="text-none d-flex align-center text-uppercase"
+              style="font-weight: 500;; font-size: 14px"
+            >
+              Eventos
+            </v-btn>
+          </router-link>
 
           <v-menu scroll-strategy="close">
             <template v-slot:activator="{ props }">
               <v-btn
                 append-icon="mdi-chevron-down"
                 v-bind="props"
-                class="text-none d-flex align-center"
-                style="font-weight: normal; font-size: 16px"
+                class="text-none d-flex align-center text-uppercase"
+                style="font-weight: 500; font-size: 14px"
               >
                 Categorias
               </v-btn>
             </template>
             <v-list>
               <v-list-item
-                v-for="(item, index) in items"
+                v-for="(item, index) in store.categories"
                 :key="index"
                 :value="index"
               >
@@ -31,18 +40,29 @@
             </v-list>
           </v-menu>
 
-          <router-link class="mx-5" style="color: #f2af29" to="/events/Intro"
-            >Produzir eventos</router-link
-          >
+          <router-link style="color: #f2af29" to="/events/Intro">
+            <v-btn
+              class="text-none d-flex align-center text-uppercase"
+              style="font-weight: 500; font-size: 14px"
+            >
+              Produzir eventos
+            </v-btn>
+          </router-link>
         </div>
         <v-spacer></v-spacer>
-        <v-btn
-          style="background-color: #38be92; color: #000; font-weight: bold"
-        >
-          Cadastre-se
-        </v-btn>
+        <router-link>
+          <v-btn
+          class="text-uppercase"
+            style="background-color: #38be92; color: #fff; font-weight: bold; font-size: 14px"
+          >
+            Cadastre-se
+          </v-btn>
+        </router-link>
 
-        <v-btn class="mx-4 custom-outlined" variant="outlined"> Entrar </v-btn>
+        <router-link>
+          <v-btn class="mx-4 custom-outlined text-uppercase" style="font-size: 14px" variant="outlined"> Entrar </v-btn>
+        </router-link>
+
       </v-app-bar>
     </v-app>
   </v-responsive>
@@ -50,15 +70,11 @@
 
 <script setup>
 import { onMounted, ref, onBeforeUnmount } from "vue";
+import { useAppStore } from "@/stores/app";
+
+const store = useAppStore()
 
 const menu = ref(false);
-
-const items = [
-  { title: "Click Me" },
-  { title: "Click Me" },
-  { title: "Click Me" },
-  { title: "Click Me 2" },
-];
 
 </script>
 
@@ -66,16 +82,12 @@ const items = [
 .app-container {
   min-width: 100%;
   max-width: 100%;
-  max-height: 63px;
+  max-height: 100px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .custom-outlined {

@@ -1,8 +1,8 @@
 <template>
-  <v-footer class="text-center d-flex flex-column">
+  <v-footer class="text-center d-flex flex-column bg-surface">
     <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5">
       <v-col>
-        <img src="../assets/logo.png" alt="" width="64" height="64" />
+        <img src="../assets/logo.png" class="icon-image" alt="" width="64" height="64" />
       </v-col>
 
       <v-col>
@@ -143,5 +143,15 @@ const icons = ["mdi-facebook", "mdi-twitter", "mdi-instagram"];
 hr{
   opacity: 20%;
 
+}
+
+.icon-image{
+  filter: saturate(0);
+}
+
+.icon-image:hover{
+  filter: saturate(1);
+  cursor: pointer;
+  transition:0.4s all;
 }
 </style>
