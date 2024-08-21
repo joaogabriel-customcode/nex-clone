@@ -1,13 +1,21 @@
 <script setup lang='ts'>
 let show = ref(false)
-let { label, errorField } = defineProps<{ label: string, errorField : string | undefined }>()
+let { label, errorField, message, link } = defineProps<{ label: string, errorField : string | undefined, message? : string, link? : string }>()
 let model = defineModel()
 </script>
 <template>
     <v-text-field class="w-50" :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'" :type="show ? 'text' : 'password'"
-        hint="At least 8 characters" :label="label" :name="label" counter v-model="model"  :error-messages="errorField"
-        @click:append-inner="show = !show"></v-text-field>
+         :label="label" :name="label"  v-model="model" :error-messages="errorField"
+        @click:append-inner="show = !show">
+        <template class="d-flex pa-0 ma-0" v-slot:details>
+            <p class="text-right text-no-wrap text-body-2" v-show="message"> <router-link class="text-primary text-decoration-none" show="link" :to="link || '/'">{{ message}}</router-link></p>
+        </template>
+    
+    </v-text-field>
+    
 </template>
 
 
-<style scoped></style>
+<style scoped>
+
+</style>
