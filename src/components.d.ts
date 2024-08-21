@@ -23,8 +23,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchEvents: typeof import('./components/event-sale/SearchEvents.vue')['default']
     SeminarEvents: typeof import('./components/event-sale/SeminarEvents.vue')['default']
+    SignComponent: typeof import('./components/signComponents/SignComponent.vue')['default']
     WorkshopsEvent: typeof import('./components/event-sale/WorkshopsEvent.vue')['default']
-    SginComponent: typeof import('./components/SginComponent.vue')['default']
-    SignComponent: typeof import('./components/SignComponents/SignComponent.vue')['default']
   }
 }
