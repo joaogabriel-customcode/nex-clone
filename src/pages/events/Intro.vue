@@ -1,12 +1,10 @@
 <template>
   <div>
-    <NavBar />
     <BannerFuncionallityVue />
     <BannerLayoutSystemVue/>
     <CardsSkillsVue/>
     <OrganizationEventVue/>
     <CreatedFacilityContainerVue />
-    <FooterBar/>
   </div>
 </template>
 
@@ -20,3 +18,7 @@ import CreatedFacilityContainerVue from '@/components/CreatedFacilityContainer.v
 
 
 </script>
+<route lang="yaml">
+  meta :
+    layout : home
+</route>
