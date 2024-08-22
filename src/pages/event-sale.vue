@@ -13,7 +13,7 @@
               <template v-slot:activator="{ props }">
                   <v-list-item v-bind="props" prepend-icon="mdi-tag" title="Categories"></v-list-item>
               </template>
-              <v-list-item v-for="category in store.categories" link :to="category.href" :title="category.title"></v-list-item>
+              <v-list-item v-for="(category, index) in store.categories" link :to="category.href" :key="index" :title="category.title"></v-list-item>
             </v-list-group>
           </v-list>
         </v-navigation-drawer>

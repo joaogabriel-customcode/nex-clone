@@ -11,6 +11,7 @@
     "@mdi/font": "7.4.47",
     "@vee-validate/zod": "^4.13.2",
     "axios": "^1.7.4",
+    "axis": "^1.0.0",
     "core-js": "^3.37.1",
     "roboto-fontface": "*",
     "vee-validate": "^4.13.2",

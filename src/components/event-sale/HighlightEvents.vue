@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, defineAsyncComponent } from 'vue';
-import CardEvent from './CardEvent.vue';
+import { ref, onMounted } from 'vue';
+import CardEvent from './CardEvent.vue'
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
 
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
