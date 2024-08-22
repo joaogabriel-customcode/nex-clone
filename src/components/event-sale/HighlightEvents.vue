@@ -6,16 +6,8 @@
       fluid
       class="d-flex align-center flex-column flex-sm-row flex-wrap pa-2"
     >
-      <Suspense>
-        <template #default>
-          <v-slide-group>
-            <CardEvent v-for="event in events" :key="event.id" />
-          </v-slide-group>
-        </template>
-        <template #fallback>
-          
-        </template>
-      </Suspense>
+          <EventCarrousel :events="events"/>
+      
     </v-container>
   </v-main>
 </template>

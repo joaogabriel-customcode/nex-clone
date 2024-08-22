@@ -1,14 +1,36 @@
+<script lang="ts" setup>
+import { BASE_IMAGE_URL } from '@/appConstants';
+import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
+interface Event { 
+         id : string,
+         title : string,
+         slug : string,
+         category: string,
+         photo? : string
+    }
+  const {category, id ,photo ,slug ,title} = defineProps<Event>()
+</script>
 <template>
   <router-link to="/">
-    <v-card max-width="370" class="rounded-lg card mx-3">
+    <v-card class="rounded-lg card ">
       <v-img
-        width="369"
+        v-if="photo"
         height="160"
-        src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+        :src="BASE_IMAGE_URL + photo"
         cover
         rounded
-        class="mb-2 position-relative rounded-lg"
+        class="mb-2 position-relative rounded-lg "
+        :class="{'w-100' : $vuetify.display.smAndDown}"
       ></v-img>
+      <v-sheet
+        v-else
+        height="160" 
+        cover
+        rounded 
+        class="d-flex justify-center align-center"
+      >
+          <p class="text-primary text-uppercase text-h3">{{ firstAndLastWordFirstLetters(title) }}</p>
+      </v-sheet>
 
       <v-chip
         color="background2"
@@ -16,10 +38,10 @@
         class="position-absolute elevation-5"
         style="top: 5px; left: 5px"
       >
-        Conferencia
+        {{ category }}
       </v-chip>
       <div class="px-4 mb-2 d-flex" style="font-size: 24px">
-        Evento Do paulinho
+        {{ title }}
       </div>
 
       <v-divider class="mx-4 mb-4"></v-divider>
@@ -37,7 +59,7 @@
       </div>
 
       <v-card-actions>
-        <v-btn color="primary" block border>
+        <v-btn :to="slug" color="primary" block border>
           Ingressos Disponíveis
           <v-icon size="large">mdi-chevron-right</v-icon>
         </v-btn>

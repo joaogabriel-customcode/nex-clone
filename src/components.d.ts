@@ -16,6 +16,7 @@ declare module 'vue' {
     ConferenceEvents: typeof import('./components/event-sale/ConferenceEvents.vue')['default']
     ContainerOne: typeof import('./components/homeComponents/ContainerOne.vue')['default']
     CreatedFacilityContainer: typeof import('./components/CreatedFacilityContainer.vue')['default']
+    EventCarrousel: typeof import('./components/event-sale/EventCarrousel.vue')['default']
     FooterBar: typeof import('./components/FooterBar.vue')['default']
     HighlightEvents: typeof import('./components/event-sale/HighlightEvents.vue')['default']
     MobileNav: typeof import('./components/home-layout/MobileNav.vue')['default']
