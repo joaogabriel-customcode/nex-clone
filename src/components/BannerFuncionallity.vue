@@ -14,9 +14,7 @@
 }
 
 .centered-img {
-  height: 80%; 
-  width: 80%; 
   max-height: 80vh;
-  max-width: 80vw;
+  max-width: 85vw;
 }
 </style>

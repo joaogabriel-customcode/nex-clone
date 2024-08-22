@@ -1,11 +1,16 @@
 <template>
-    <div class="bg-background2">
+    <div>
       <NavBar />
-
+        <v-main>
+          <ContainerOne />
+          <ConatinerTwo />
+        </v-main>
       <FooterBar/>
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+import ContainerOne from "@/components/homeComponents/ContainerOne.vue"
+import ConatinerTwo from "@/components/homeComponents/ConatinerTwo.vue";
 
 </script>
