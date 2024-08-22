@@ -2,8 +2,10 @@
     <div>
       <NavBar />
         <v-main>
-          <ContainerOne />
-          <ConatinerTwo />
+          <v-container fluid>
+            <ContainerOne />
+            <ConatinerTwo />
+          </v-container>
         </v-main>
       <FooterBar/>
     </div>

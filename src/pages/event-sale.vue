@@ -3,9 +3,8 @@
     <NavBar />
     <v-main>
       <v-img cover src="../assets/capa.gif"> </v-img>
-      <SearchEvents/>
-      <HighlightEvents/>
-
+        <SearchEvents/>
+        <HighlightEvents/>
     </v-main>
     <FooterBar />
   </div>
