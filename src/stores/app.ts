@@ -5,31 +5,31 @@ export const useAppStore = defineStore('app', {
   state: () => ({
       categories: [
         { title: "Confêrencia",
-          href : "/event-sale/Conferências"
+          href : "/events/category-conferencias"
          },
         { title: "Workshop",
-          href : "/event-sale/Workshops"
+          href : "/events/category-workshops"
         },
         { title: "Seminário",
-          href : "/event-sale/Seminários"
+          href : "/events/category-seminarios"
          },
         { title: "Reunião de negócios",
-          href : "/event-sale/Reunião de negócios"
+          href : "/events/category-reuniaodenegocios"
          },
         { title: "Lançamento de produto",
-          href : "Lançamentos de produtos"
+          href : "/events/category-lançamentosdeprodutos"
          },
         { title: "Treinamento",
-          href: "/event-sale/Treinamentos"
+          href: "/events/category-treinamentos"
          },
         { title: "Networking",
-          href: "/event-sale/Networking"
+          href: "/events/category-networking"
          },
         { title: "Webinar",
-          href: "/event-sale/Webinars"
+          href: "/events/category-webinars"
          },
         { title: "Todos",
-          href: "/event-sale/Todos"
+          href: "/events/category-todos"
          },
       ],
       
