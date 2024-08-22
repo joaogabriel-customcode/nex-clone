@@ -1,28 +1,31 @@
 <template>
-  <v-container fluid style="background-image: url(../../assets/bg-home.svg)">
-    <v-container fluid class="d-flex flex-column mx-4 container-absolute">
-      <div class="mb-8">
-        <h1>Só os melhores eventos para você na nossa plataforma</h1>
-      </div>
+  <v-container fluid class="d-flex flex-column pa-0">
+    <div class="mb-8 text-center">
+      <h1 class="display-1">
+        Só os
+        <strong style="color: #f2af29">melhores </strong>
+        <strong style="color: #38be92">eventos</strong>
+        para você na nossa plataforma
+      </h1>
+    </div>
 
-      <SearchInput />
+    <SearchInput />
 
-      <HighlightEvents class="my-5" />
+    <HighlightEvents class="my-3" />
 
-      <div class="d-flex justify-center my-2 align-center">
-        <v-btn
-          style="
-            background-color: #38be92;
-            color: #fff;
-            font-weight: bold;
-            width: 200px;
-          "
-        >
-          Ver mais Eventos
-        <v-icon size="large" >mdi-chevron-right</v-icon>
-        </v-btn>
-      </div>
-    </v-container>
+    <div class="d-flex justify-center my-2 align-center">
+      <v-btn
+        style="
+          background-color: #38be92;
+          color: #fff;
+          font-weight: bold;
+          width: 200px;
+        "
+      >
+        Ver mais Eventos
+        <v-icon size="large">mdi-chevron-right</v-icon>
+      </v-btn>
+    </div>
   </v-container>
 </template>
 
@@ -33,13 +36,40 @@ import HighlightEvents from "../event-sale/HighlightEvents.vue";
 
 <style scoped>
 h1 {
-  width: 420px;
+  width: 70vh;
   font-size: 3.1rem;
   line-height: 1.2;
   text-transform: uppercase;
   font-weight: 500;
   word-spacing: 5px;
   text-align: start;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    width: 100%; /* Ajuste a largura para caber no mobile */
+    font-size: 2rem; /* Diminui o tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    word-spacing: normal; /* Ajuste de espaçamento */
+  }
+
+  .v-btn {
+    width: 100%;
+  }
+
+  .mb-8 {
+    margin-bottom: 16px !important;
+  }
+
+  .my-3 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .my-2 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
 }
 
 .img-bg {

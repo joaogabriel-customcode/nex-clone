@@ -43,4 +43,26 @@ onMounted(() => {
 // Use defineAsyncComponent if you need to import components dynamically
 // Example:
 // const CardEvent = defineAsyncComponent(() => import('./CardEvent.vue'));
+
 </script>
+
+<style scoped>
+/* Estilos responsivos */
+@media (min-width: 600px) {
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .mx-2{
+    margin: 0;
+  }
+
+  .my-5 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+</style>
