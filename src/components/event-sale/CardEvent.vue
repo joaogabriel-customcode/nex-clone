@@ -1,6 +1,6 @@
 <template>
   <router-link to="/">
-    <v-card max-width="370" class="rounded-lg card">
+    <v-card max-width="370" class="rounded-lg card mx-3">
       <v-img
         width="369"
         height="160"
@@ -48,9 +48,25 @@
 <style>
 a {
   text-decoration: none;
+  margin: 0;
 }
 
 .card:hover {
   filter: brightness(1.05);
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 320px;
+    margin: 0;
+  }
+
+  @media (max-width: 360px){
+    .card {
+      width: 310;
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
 </style>

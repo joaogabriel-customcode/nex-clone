@@ -1,7 +1,12 @@
 <template>
     <div>
-      <ContainerOne />
-      <ConatinerTwo />
+      <NavBar />
+        <v-main>
+          <v-container fluid>
+            <ContainerOne />
+            <ConatinerTwo />
+          </v-container>
+        </v-main>
       <FooterBar/>
     </div>
 </template>
