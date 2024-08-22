@@ -20,6 +20,7 @@
           v-for="(item, index) in store.categories"
           :key="index"
           :value="index"
+          :to="item.href"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
