@@ -48,10 +48,6 @@ function useEventParticipantHook() {
     }
   };
 
-  
- {
-    let a = "a"
- }
   const eventParticipantControllerGetEventsMoreView = async () => {
     try {
       const { data, status, statusText } =
