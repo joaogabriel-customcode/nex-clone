@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { BASE_IMAGE_URL } from '@/appConstants';
 import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
+interface CardSettings {
+    mobile? : boolean
+}
 interface Event { 
          id : string,
          title : string,
@@ -8,11 +11,18 @@ interface Event {
          category: string,
          photo? : string
     }
-  const {category, id ,photo ,slug ,title} = defineProps<Event>()
+
+  type cardProps = Event & CardSettings
+
+  const {category, id ,photo ,slug ,title, mobile} = defineProps<cardProps>()
+
+  const classCard = computed(()=> {
+    return mobile ? 'fixed-width'  : '300'
+  })
 </script>
 <template>
   <router-link to="/">
-    <v-card class="rounded-lg card ">
+    <v-card class="rounded-lg card" :width="classCard">
       <v-img
         v-if="photo"
         height="160"
@@ -29,7 +39,7 @@ interface Event {
         rounded 
         class="d-flex justify-center align-center"
       >
-          <p class="text-primary text-uppercase text-h3">{{ firstAndLastWordFirstLetters(title) }}</p>
+          <p class="text-primary text-uppercase text-h3" >{{ firstAndLastWordFirstLetters(title) }}</p>
       </v-sheet>
 
       <v-chip
@@ -40,7 +50,7 @@ interface Event {
       >
         {{ category }}
       </v-chip>
-      <div class="px-4 mb-2 d-flex" style="font-size: 24px">
+      <div class="px-4 mb-2 d-flex text-truncate" style="font-size: 24px; width: 93%">
         {{ title }}
       </div>
 
@@ -59,7 +69,7 @@ interface Event {
       </div>
 
       <v-card-actions>
-        <v-btn :to="slug" color="primary" block border>
+        <v-btn color="primary" block>
           Ingressos Disponíveis
           <v-icon size="large">mdi-chevron-right</v-icon>
         </v-btn>
