@@ -16,7 +16,7 @@ const { smAndDown } = useDisplay();
 
 const isSmall = computed(() => smAndDown.value);
 
-const { events } = defineProps<{events : Array<any>}>();
+const { events } = defineProps<{events : Event[]}>();
 
 watch(events, () => {
   console.log(events, 'foi ataualizado')

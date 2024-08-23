@@ -21,7 +21,7 @@ declare module 'vue' {
     FooterBar: typeof import('./components/FooterBar.vue')['default']
     HighlightEvents: typeof import('./components/event-sale/HighlightEvents.vue')['default']
     MobileNav: typeof import('./components/home-layout/MobileNav.vue')['default']
-    NavBar: typeof import('./components/NavBar.vue')['default']
+    NavBar: typeof import('./components/home-layout/NavBar.vue')['default']
     Networkingevents: typeof import('./components/event-sale/Networkingevents.vue')['default']
     OrganizationEvent: typeof import('./components/OrganizationEvent.vue')['default']
     PasswordField: typeof import('./components/PasswordField.vue')['default']
