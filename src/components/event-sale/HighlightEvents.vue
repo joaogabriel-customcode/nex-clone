@@ -4,10 +4,10 @@
 
     <v-container
       fluid
-      class="d-flex align-center flex-column flex-sm-row flex-wrap pa-2"
-    >
-          <EventCarrousel :events="events"/>
-      
+      class="d-flex align-center flex-column flex-sm-row flex-wrap "
+    >        
+            <EventCarrousel :events="events"/>
+            <p>Loading...</p>
     </v-container>
   </v-main>
 </template>
@@ -17,14 +17,13 @@ import { ref, onMounted } from 'vue';
 import CardEvent from './CardEvent.vue'
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
 
-const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
-const events = ref<any[]>([]);
+const { eventParticipantControllerFindAllPublicEvents, eventParticipantControllerGetEventsMoreView } = useEventParticipantHook();
+let events = reactive<any[]>([]);
 
 // Define a component that returns a Promise
 const fetchEvents = async () => {
-  const response = await eventParticipantControllerFindAllPublicEvents('100', '1');
-  events.value = response.data.data;
-  console.log(events.value);
+  const response = await eventParticipantControllerGetEventsMoreView();
+  events.splice(0, events.length, response.data)  ;
 };
 
 // Use onMounted to call the fetchEvents function
