@@ -16,13 +16,11 @@ interface Event {
 
   const {category, id ,photo ,slug ,title, mobile} = defineProps<cardProps>()
 
-  const classCard = computed(()=> {
-    return mobile ? 'fixed-width'  : '300'
-  })
+  
 </script>
 <template>
   <router-link to="/">
-    <v-card class="rounded-lg card" :width="classCard">
+    <v-card class="rounded-lg card" :class="{ 'w-100' : mobile, 'card-size' : !mobile }">
       <v-img
         v-if="photo"
         height="160"
@@ -85,6 +83,10 @@ a {
 
 .card:hover {
   filter: brightness(1.05);
+}
+
+.card-size { 
+   width: 25vw;
 }
 
 @media (max-width: 600px) {

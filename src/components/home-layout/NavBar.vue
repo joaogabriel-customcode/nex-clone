@@ -2,14 +2,14 @@
   <v-responsive class="rounded">
     <v-app class="app-container">
       <v-main>
-        <v-app-bar class="px-5 py-3 bg-background elevation-6 ">
+        <v-app-bar class="px-5 py-1 bg-background elevation-6 ">
         
-        <template v-slot:prepend>
-          <v-app-bar-nav-icon @click.stop="menuContext.changeMenu()" class="d-flex d-sm-none" block slim size="50"></v-app-bar-nav-icon>
+        <template class="pa-0" v-slot:prepend>
+          <v-app-bar-nav-icon @click.stop="menuContext.changeMenu()" class="d-sm-none" slim size="50"></v-app-bar-nav-icon>
         </template>
         <div class="d-none d-sm-flex align-center image-aliasing">
           <router-link to="/" class=""
-          ><img src="../assets/logo.png" width="45" height="45" class="logo"
+          ><img src="../../assets/LoginPage/nex.png" width="45" height="45" class="logo"
         /></router-link>
         <div
           class="d-flex align-center mx-5 justify-center text-uppercase "
@@ -18,7 +18,7 @@
           <router-link to="/event-sale">
             <v-btn
               class="text-none d-flex align-center text-uppercase"
-              style="font-weight: 500;; font-size: 14px"
+              style="font-weight: 500; font-size: 14px"
             >
               Eventos
             </v-btn>
