@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { BASE_IMAGE_URL } from '@/appConstants';
 import { useDisplay } from 'vuetify';
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, defineProps } from 'vue';
 import { id } from 'vuetify/locale';
 
 interface Event {
@@ -26,7 +26,7 @@ watch(events, () => {
 
 <template>
   <div class="w-100">
-    <div v-if="events.length !== 0">
+    <div v-if="events.length !== 0" style="margin-bottom: 15%">
       <v-slide-group v-if="!isSmall" show-arrows>
         <v-slide-group-item v-for="event in events" :key="event.id">
           <CardEvent class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category"
@@ -41,7 +41,7 @@ watch(events, () => {
         </v-window-item>
       </v-window>
     </div>
-    <div v-else>
+    <div v-else style="margin-bottom: 30%;" class="text-center text-md-start mx-0 mx-md-8">
        <p>Nenhum evento encontrado</p>
     </div>
 
