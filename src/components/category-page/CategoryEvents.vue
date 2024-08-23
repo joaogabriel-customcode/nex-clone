@@ -7,11 +7,12 @@
       class="d-flex align-center flex-column flex-sm-row flex-wrap"
     >
       <Suspense timeout="0">
-        <template  #fallback>
+        <template #fallback>
           <span>aaaaaA</span>
         </template>
         <EventCarrousel :events="events"/>
       </Suspense>
+      <pre>{{ events }}</pre>
     </v-container>
   </v-main>
 </template>
@@ -19,14 +20,19 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
-
-const { eventParticipantControllerGetEventsMoreView } = useEventParticipantHook();
+const { category } = defineProps<{category  : Ref<string> }>()
+const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
 const events = ref<any>(null);
 
 const fetchEvents = async () => {
-  const response = await eventParticipantControllerGetEventsMoreView();
-  events.value = response.data;
+  console.log(category)
+  const response = await eventParticipantControllerFindAllPublicEvents("100", "1", undefined, category);
+  events.value = response.data.data;
 };
+
+watch(category, ()=> { 
+  console.log(category)
+})
 
 // Use onMounted to fetch the data
 onMounted(async () => {

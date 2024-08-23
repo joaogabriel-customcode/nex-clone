@@ -12,6 +12,7 @@ declare module 'vue' {
     BussinessEvent: typeof import('./components/event-sale/BussinessEvent.vue')['default']
     CardEvent: typeof import('./components/event-sale/CardEvent.vue')['default']
     CardsSkills: typeof import('./components/CardsSkills.vue')['default']
+    CategoryEvents: typeof import('./components/category-page/CategoryEvents.vue')['default']
     ConatinerTwo: typeof import('./components/homeComponents/ConatinerTwo.vue')['default']
     ConferenceEvents: typeof import('./components/event-sale/ConferenceEvents.vue')['default']
     ContainerOne: typeof import('./components/homeComponents/ContainerOne.vue')['default']
