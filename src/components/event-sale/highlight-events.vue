@@ -17,9 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
-
+import { ref, onMounted } from 'vue';
 const { eventParticipantControllerGetEventsMoreView } = useEventParticipantHook();
 const events = ref<any>([]);
 

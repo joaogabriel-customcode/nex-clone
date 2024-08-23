@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-center justify-center my-7">
     <v-img
-      src="../assets/banner-dark.svg"
+      src="../../assets/events/banner-dark.svg"
       class="centered-img"
       contain
     ></v-img>

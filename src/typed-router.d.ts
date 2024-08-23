@@ -19,10 +19,10 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/event-sale': RouteRecordInfo<'/event-sale', '/event-sale', Record<never, never>, Record<never, never>>,
-    '/events/category-[id]': RouteRecordInfo<'/events/category-[id]', '/events/category-:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
-    '/events/Intro': RouteRecordInfo<'/events/Intro', '/events/Intro', Record<never, never>, Record<never, never>>,
-    '/signin': RouteRecordInfo<'/signin', '/signin', Record<never, never>, Record<never, never>>,
-    '/signup': RouteRecordInfo<'/signup', '/signup', Record<never, never>, Record<never, never>>,
+    '/auth/signin': RouteRecordInfo<'/auth/signin', '/auth/signin', Record<never, never>, Record<never, never>>,
+    '/auth/signup': RouteRecordInfo<'/auth/signup', '/auth/signup', Record<never, never>, Record<never, never>>,
+    '/public/event-sale': RouteRecordInfo<'/public/event-sale', '/public/event-sale', Record<never, never>, Record<never, never>>,
+    '/public/events/category-[id]': RouteRecordInfo<'/public/events/category-[id]', '/public/events/category-:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/public/events/Intro': RouteRecordInfo<'/public/events/Intro', '/public/events/Intro', Record<never, never>, Record<never, never>>,
   }
 }

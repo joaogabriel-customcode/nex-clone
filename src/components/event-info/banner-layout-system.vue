@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-center justify-center m-10 flex-column">
     <v-img
-      src="../assets/image1.png"
+      src="../../assets/events/image1.png"
       class="centered-img d-none d-sm-flex"
     ></v-img>
 

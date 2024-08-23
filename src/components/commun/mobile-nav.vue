@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-  import { useAppStore } from '@/stores/app';
-  import { useMenuStore } from '@/stores/menu';
+  import { useAppStore } from '@/stores/category-store';
+  import { useMenuStore } from '@/stores/menu-store';
   const store = useAppStore()
   const menuContext = useMenuStore()
 </script>

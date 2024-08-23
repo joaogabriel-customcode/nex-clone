@@ -4,7 +4,7 @@
       <v-main>
         <v-app-bar class="px-5 py-1 bg-background elevation-6 ">
         
-        <template class="pa-0" v-slot:prepend>
+        <template class= "pa-0"  v-slot:prepend>
           <v-app-bar-nav-icon @click.stop="menuContext.changeMenu()" class="d-sm-none" slim size="50"></v-app-bar-nav-icon>
         </template>
         <div class="d-none d-sm-flex align-center image-aliasing">
@@ -81,8 +81,8 @@
 
 <script setup>
 import { onMounted, ref, onBeforeUnmount } from "vue";
-import { useAppStore } from "@/stores/app";
-import { useMenuStore } from "@/stores/menu";
+import { useAppStore } from "@/stores/category-store";
+import { useMenuStore } from "@/stores/menu-store";
 
 
 const store = useAppStore()

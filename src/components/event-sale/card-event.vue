@@ -1,6 +1,6 @@
 <script setup>
 import { BASE_IMAGE_URL } from '@/appConstants';
-import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
+import { firstAndLastWordFirstLetters } from '@/utils/get-name-initials';
 
 const {category, id ,photo ,slug ,title, mobile} = defineProps(['category', 'id', 'photo', 'title', 'mobile'])
 
