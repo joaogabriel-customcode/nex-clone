@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <h1 class="mx-5 my-5">Eventos de Destaque</h1>
+    <h1 class=" ">Eventos de Destaque</h1>
 
     <v-container
       fluid
@@ -35,7 +35,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* Estilos responsivos */
 @media (min-width: 600px) {
 
   h1 {

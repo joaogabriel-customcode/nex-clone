@@ -1,6 +1,6 @@
 <template>
-  <v-footer class="text-center d-flex postion-fixed bottom-0 flex-column bg-surface">
-    <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row">
+  <v-footer class="text-center d-flex bottom-0 flex-column bg-surface w-100">
+    <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row py-7'">
       <v-col>
         <img src="../assets/logo.png" class="icon-image" alt="" width="64" height="64" />
       </v-col>

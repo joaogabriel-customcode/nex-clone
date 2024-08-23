@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <h1 class="mx-5 my-5">Eventos de Destaque</h1>
+    <h1 class="my-5 text-center text-md-start mx-0 mx-md-8">Eventos de Destaque</h1>
 
     <v-container
       fluid
@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, defineProps } from 'vue';
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
 import { getCategory } from '@/utils/util';
 const { category } = defineProps<{category  : Ref<string> }>()
@@ -48,7 +48,6 @@ onMounted(async () => {
   h1 {
     font-size: 1.8rem;
     line-height: 1.3;
-    text-align: center;
   }
 
   .mx-2 {

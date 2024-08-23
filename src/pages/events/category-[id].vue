@@ -1,7 +1,7 @@
 <template>
   <div>
     <SearchEvents />
-    <CategoryEvents :category="nameCategory"/>
+    <CategoryEvents :category="nameCategory" />
 
   </div>
 </template>
