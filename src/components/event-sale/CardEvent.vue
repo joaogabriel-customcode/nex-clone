@@ -1,21 +1,8 @@
-<script lang="ts" setup>
+<script setup>
 import { BASE_IMAGE_URL } from '@/appConstants';
 import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
-import { DefineProps } from 'vue';
-interface CardSettings {
-    mobile? : boolean
-}
-interface Event { 
-         id : string,
-         title : string,
-         slug : string,
-         category: string,
-         photo? : string
-    }
 
-  type cardProps = Event & CardSettings
-
-  const {category, id ,photo ,slug ,title, mobile} = defineProps<cardProps>()
+const {category, id ,photo ,slug ,title, mobile} = defineProps(['category', 'id', 'photo', 'title', 'mobile'])
 
   
 </script>
