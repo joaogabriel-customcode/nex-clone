@@ -9,9 +9,9 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { watch, ref } from "vue";
-import SearchEvents from "@/components/event-sale/SearchEvents.vue";
+import SearchEvents from "@/components/event-sale/search-events.vue";
 import useEventParticipantHook from "@/composables/useEventParticipantHook";
-import { getCategory } from "@/utils/util";
+import { getCategory } from "@/utils/get-category";
 
 const route = useRoute();
 const eventId = ref(route.params.id);

@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import SearchEvents from "@/components/event-sale/SearchEvents.vue";
-import HighlightEvents from "@/components/event-sale/HighlightEvents.vue";
+import SearchEvents from "@/components/event-sale/search-events.vue";
+import HighlightEvents from "@/components/event-sale/highlight-events.vue";
 </script>
 <route lang="yaml">
 meta:

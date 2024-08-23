@@ -33,8 +33,8 @@
 
 <script setup>
 import { ref } from "vue";
-import { useAppStore } from "@/stores/app";
-import SearchInput from "../SearchInput.vue";
+import { useAppStore } from "@/stores/category-store";
+import searchInput from "../commun/search-input.vue";
 
 const store = useAppStore();
 

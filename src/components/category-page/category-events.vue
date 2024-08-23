@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import { ref, onMounted, defineProps } from 'vue';
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
-import { getCategory } from '@/utils/util';
+import { getCategory } from '@/utils/get-category';
 const { category } = defineProps<{category  : Ref<string> }>()
 const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
 const events = ref<any>([]);

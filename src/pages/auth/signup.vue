@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PasswordField from '@/components/PasswordField.vue';
+import PasswordField from '@/components/commun/password-field.vue';
 import { toTypedSchema } from '@vee-validate/zod';
 import { useForm } from 'vee-validate';
 import z from 'zod'
