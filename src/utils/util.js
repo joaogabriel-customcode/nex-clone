@@ -1,6 +1,6 @@
 export const getCategory = (item) => {
-  if(!item || !item.category) {
-    switch (item.category.toLowerCase()) {
+
+    switch (item.toLowerCase()) {
       case 'conferencias':
         return 'Conferência';
       case 'workshops':
@@ -22,5 +22,4 @@ export const getCategory = (item) => {
       default:
         return 'Categoria desconhecida';
     }
-  }
 }

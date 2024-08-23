@@ -1,6 +1,7 @@
 <template>
   <div>
     <SearchEvents />
+    <CategoryEvents :category="nameCategory"/>
 
     <h1>{{ eventId }}</h1>
   </div>
@@ -22,36 +23,11 @@ watch(
   () => route.path,
   (newPath) => {
     eventId.value = route.params.id;
+    nameCategory.value = getCategory(eventId.value)
   }
 );
 
-// watch(
-//   () => eventId.value,
-//   (newValue) => {
-//     console.log(newValue)
-//   }
-// );
-
-const { eventParticipantControllerFindAllPublicEvents } =
-  useEventParticipantHook();
-const events = ref([]);
-
-const fetchEvents = async () => {
-  const response = await eventParticipantControllerFindAllPublicEvents(
-    "100",
-    "1",
-    undefined,
-    eventId.value
-  );
-
-  if (response && response.data && response.data.data) {
-    events.value = response.data.data;
-    console.log(categoriesEvents(events.value));
-  }
-};
-fetchEvents();
-
-
+const { eventParticipantControllerFindAllPublicEvents } = useEventParticipantHook();
 </script>
 
 <route lang="yaml">

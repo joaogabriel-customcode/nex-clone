@@ -2,6 +2,7 @@
 import { BASE_IMAGE_URL } from '@/appConstants';
 import { useDisplay } from 'vuetify';
 import { ref, watch, computed } from 'vue';
+import { id } from 'vuetify/locale';
 
 interface Event {
   id: string;
@@ -24,10 +25,10 @@ watch(events, ()=>{
 </script>
 
 <template>
-  <v-slide-group center-active :class="{'w-100': isSmall}">
     <div class="w-100">
-      <v-slide-group v-if="!isSmall">
-        <v-slide-group-item show-arrows v-for="event in events" :key="event.id">
+      
+      <v-slide-group v-if="!isSmall" show-arrows>
+        <v-slide-group-item v-for="event in events" :key="event.id">
           <CardEvent class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category" :photo="event.photo" />
         </v-slide-group-item>
       </v-slide-group>
@@ -38,7 +39,7 @@ watch(events, ()=>{
         </v-window-item>
       </v-window>
     </div>
-  </v-slide-group>
+  
 </template>
 
 <style scoped></style>

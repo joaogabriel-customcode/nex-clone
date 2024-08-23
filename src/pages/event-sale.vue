@@ -12,10 +12,6 @@
 <script setup lang="ts">
 import SearchEvents from '@/components/event-sale/SearchEvents.vue';
 import HighlightEvents from '@/components/event-sale/HighlightEvents.vue';
-import { useMenuStore } from '@/stores/menu';
-import { useAppStore } from '@/stores/app';
-const store = useAppStore()
-const menuContext = useMenuStore()
 
 </script>
 <route lang="yaml">
