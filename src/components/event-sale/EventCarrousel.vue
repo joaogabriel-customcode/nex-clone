@@ -16,30 +16,37 @@ const { smAndDown } = useDisplay();
 
 const isSmall = computed(() => smAndDown.value);
 
-const { events } = defineProps<{ events: Event[] }>();
+const { events } = defineProps<{events : Array<any>}>();
 
-watch(events, ()=>{
-    console.log(events, 'foi ataualizado')
+watch(events, () => {
+  console.log(events, 'foi ataualizado')
 })
 
 </script>
 
 <template>
-    <div class="w-100">
-      
+  <div class="w-100">
+    <div v-if="events.length !== 0">
       <v-slide-group v-if="!isSmall" show-arrows>
         <v-slide-group-item v-for="event in events" :key="event.id">
-          <CardEvent class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category" :photo="event.photo" />
+          <CardEvent class="mx-2" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category"
+            :photo="event.photo" />
         </v-slide-group-item>
       </v-slide-group>
 
-      <v-window v-else class="w-100">
+      <v-window v-else class="w-100" continuous>
         <v-window-item class="flex w-100" v-for="event in events" :key="event.id">
-          <CardEvent :mobile="isSmall" :key="event.id" :slug="event.slug" :id="event.id" :title="event.title" :category="event.category" :photo="event.photo" />
+          <CardEvent :mobile="isSmall" :key="event.id" :slug="event.slug" :id="event.id" :title="event.title"
+            :category="event.category" :photo="event.photo" />
         </v-window-item>
       </v-window>
     </div>
-  
+    <div v-else>
+       <p>Nenhum evento encontrado</p>
+    </div>
+
+  </div>
+
 </template>
 
 <style scoped></style>

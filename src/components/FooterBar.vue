@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="text-center d-flex flex-column bg-surface">
+  <v-footer class="text-center d-flex postion-fixed bottom-0 flex-column bg-surface">
     <v-row class="d-flex justify-space-between w-100 align-center flex-wrap mt-5 flex-column flex-md-row">
       <v-col>
         <img src="../assets/logo.png" class="icon-image" alt="" width="64" height="64" />

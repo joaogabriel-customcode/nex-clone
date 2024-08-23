@@ -3,7 +3,6 @@
     <SearchEvents />
     <CategoryEvents :category="nameCategory"/>
 
-    <h1>{{ eventId }}</h1>
   </div>
 </template>
 
@@ -17,7 +16,7 @@ import { getCategory } from "@/utils/util";
 const route = useRoute();
 const eventId = ref(route.params.id);
 
-const nameCategory = ref('')
+const nameCategory = ref(getCategory(route.params.id))
 
 watch(
   () => route.path,
