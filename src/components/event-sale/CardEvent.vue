@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { BASE_IMAGE_URL } from '@/appConstants';
 import { firstAndLastWordFirstLetters } from '@/utils/getNameInitials';
+import { DefineProps } from 'vue';
 interface CardSettings {
     mobile? : boolean
 }
@@ -19,7 +20,7 @@ interface Event {
   
 </script>
 <template>
-  <router-link to="/">
+  <router-link to="/" class="w-100">
     <v-card class="rounded-lg card" :class="{ 'w-100' : mobile, 'card-size' : !mobile }">
       <v-img
         v-if="photo"
@@ -79,6 +80,8 @@ interface Event {
 a {
   text-decoration: none;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .card:hover {

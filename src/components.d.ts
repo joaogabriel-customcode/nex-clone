@@ -13,9 +13,10 @@ declare module 'vue' {
     CardEvent: typeof import('./components/event-sale/CardEvent.vue')['default']
     CardsSkills: typeof import('./components/CardsSkills.vue')['default']
     CategoryEvents: typeof import('./components/category-page/CategoryEvents.vue')['default']
-    ConatinerTwo: typeof import('./components/homeComponents/ConatinerTwo.vue')['default']
+    CategoryGrid: typeof import('./components/category-page/CategoryGrid.vue')['default']
+    ConatinerTwo: typeof import('./components/home-components/ConatinerTwo.vue')['default']
     ConferenceEvents: typeof import('./components/event-sale/ConferenceEvents.vue')['default']
-    ContainerOne: typeof import('./components/homeComponents/ContainerOne.vue')['default']
+    ContainerOne: typeof import('./components/home-components/ContainerOne.vue')['default']
     CreatedFacilityContainer: typeof import('./components/CreatedFacilityContainer.vue')['default']
     EventCarrousel: typeof import('./components/event-sale/EventCarrousel.vue')['default']
     FooterBar: typeof import('./components/FooterBar.vue')['default']
@@ -30,7 +31,7 @@ declare module 'vue' {
     SearchEvents: typeof import('./components/event-sale/SearchEvents.vue')['default']
     SearchInput: typeof import('./components/SearchInput.vue')['default']
     SeminarEvents: typeof import('./components/event-sale/SeminarEvents.vue')['default']
-    SignComponent: typeof import('./components/signComponents/SignComponent.vue')['default']
+    SignComponent: typeof import('./components/sign-components/SignComponent.vue')['default']
     WorkshopsEvent: typeof import('./components/event-sale/WorkshopsEvent.vue')['default']
   }
 }
