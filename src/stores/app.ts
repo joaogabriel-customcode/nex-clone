@@ -16,7 +16,7 @@ export const useAppStore = defineStore('app', {
         { title: "Reunião de negócios",
           href : "/events/category-reuniaodenegocios"
          },
-        { title: "Lançamento de produto",
+        { title: "Lançamento de produtos",
           href : "/events/category-lançamentosdeprodutos"
          },
         { title: "Treinamento",
@@ -29,7 +29,7 @@ export const useAppStore = defineStore('app', {
           href: "/events/category-webinars"
          },
         { title: "Todos",
-          href: "/events/category-todos"
+          href: "/events/category-all"
          },
       ],
       

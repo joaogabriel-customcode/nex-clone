@@ -8,7 +8,7 @@
     >
       <Suspense timeout="0">
         <template  #fallback>
-          <span>aaaaaA</span>
+          <span>loading</span>
         </template>
         <EventCarrousel :events="events"/>
       </Suspense>

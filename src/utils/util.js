@@ -9,7 +9,7 @@ export const getCategory = (item) => {
         return 'Seminário';
       case 'reuniaodenegocios':
         return 'Reunião de negócios';
-      case 'lancamentosdeprodutos':
+      case 'lançamentosdeprodutos':
         return 'Lançamento de produto';
       case 'treinamentos':
         return 'Treinamento';
@@ -17,8 +17,8 @@ export const getCategory = (item) => {
         return 'Networking';
       case 'webinars':
         return 'Webinar';
-      case 'todos':
-        return 'Todos';
+      case 'all':
+        return '';
       default:
         return 'Categoria desconhecida';
     }
