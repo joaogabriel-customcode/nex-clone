@@ -21,7 +21,7 @@ import { ref, onMounted } from 'vue';
 import useEventParticipantHook from '@/composables/useEventParticipantHook';
 
 const { eventParticipantControllerGetEventsMoreView } = useEventParticipantHook();
-const events = ref<any>(null);
+const events = ref<any>([]);
 
 const fetchEvents = async () => {
   const response = await eventParticipantControllerGetEventsMoreView();

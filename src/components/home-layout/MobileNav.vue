@@ -11,7 +11,7 @@
           <div class="my-14"></div>
           <v-list>
             <v-list-item title="Início" link to="/" prepend-icon="mdi-home-variant-outline"></v-list-item>
-            <v-list-item title="Eventos" prepend-icon="mdi-calendar-blank"></v-list-item>
+            <v-list-item title="Eventos" link to="/event-sale" prepend-icon="mdi-calendar-blank"></v-list-item>
             <v-list-group value="categories">
               <template v-slot:activator="{ props }">
                   <v-list-item v-bind="props" prepend-icon="mdi-tag" title="Categories"></v-list-item>
