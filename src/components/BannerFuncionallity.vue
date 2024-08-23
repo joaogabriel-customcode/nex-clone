@@ -1,11 +1,11 @@
 <template>
-  <v-main class="d-flex align-center justify-center my-7">
+  <div class="d-flex align-center justify-center my-7">
     <v-img
       src="../assets/banner-dark.svg"
       class="centered-img"
       contain
     ></v-img>
-  </v-main>
+  </div>
 </template>
 
 <style scoped>

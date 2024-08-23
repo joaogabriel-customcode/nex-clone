@@ -1,5 +1,5 @@
 <template>
-  <v-main class="d-flex align-center justify-center m-10 flex-column">
+  <div class="d-flex align-center justify-center m-10 flex-column">
     <v-img
       src="../assets/image1.png"
       class="centered-img d-none d-sm-flex"
@@ -9,7 +9,7 @@
     <div class="d-flex justify-center my-10">
       <v-btn style="background-color: #38BE92; color: #fff; font-weight: bold; width: 160px;"> Começar </v-btn>
     </div>
-  </v-main>
+  </div>
 </template>
 
 <style scoped>

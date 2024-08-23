@@ -1,6 +1,6 @@
 <template>
-  <v-main>
-    <h1 class=" ">Eventos de Destaque</h1>
+  <div>
+    <h1 class=" my-5 text-center text-md-start mx-0 mx-md-8">Eventos de Destaque</h1>
 
     <v-container
       fluid
@@ -13,7 +13,7 @@
         <EventCarrousel :events="events"/>
       </Suspense>
     </v-container>
-  </v-main>
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -1,19 +1,27 @@
 <template>
-  <v-main>
-    <h1 class="my-5 text-center text-md-start mx-0 mx-md-8">Eventos de Destaque</h1>
+  <v-container fluid class="d-flex flex-column justify-center pa-0">
+    <h1 v-if="events.length !== 0"   class="my-5 text-center text-md-start mx-0 mx-md-8">Eventos de Destaque</h1>
 
     <v-container
       fluid
-      class="d-flex align-center flex-column flex-sm-row flex-wrap"
-    >
+      class="d-flex align-center flex-column flex-sm-row flex-wrap mb-16"
+      v-if="events.length !== 0"
+      >
       <Suspense timeout="0">
         <template #fallback>
           <span>Loading</span>
         </template>
-        <EventCarrousel :events="events"/>
+        <CategoryGrid class="w-100" :events="events" />
       </Suspense>
     </v-container>
-  </v-main>
+
+    <v-container
+      fluid
+      class="d-flex align-center flex-column flex-sm-row flex-wrap pa-0"
+      v-else>
+      <h3 class="my-5 text-center text-md-start mx-0 mx-md-16">Nenhum evento encontrado</h3>
+    </v-container>
+  </v-container>
 </template>
 
 <script setup lang="ts">
